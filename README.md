@@ -6,7 +6,6 @@ Use this Azure template to download a package from a package management feed in 
 
 The pipeline requires the following parameters to be defined:
 
-
 | Name  | Displayname | type | Default | Values | Opional/Required | Comments |
 | ------------- | ------------- | :-------------: | :-------------: | ------------- | :-------------: | ------------- |
 | packageType | Package type | string | nuget |'maven'/'npm' / 'nuget'/ 'pypi'/'upack'/'cargo' | Required | Allowed values: maven, npm, nuget, pypi (Python), upack (Universal), cargo|
@@ -23,7 +22,7 @@ These parameters provide multiple use case options for the template, enable/disa
 
 ## Use Cases
 
-You can directly call a particular template as per the requirement. for example: 
+You can directly call a particular template as per the requirement. for example:
 
   ```yaml
   # azure-pipeline.yml
@@ -45,6 +44,6 @@ You can directly call a particular template as per the requirement. for example:
       definition: com.test:testpackage 
       downloadPath: '$(System.ArtifactsDirectory)'     
       version: '${{parameters.version}}'   
-        
-  
-Make sure to adjust the repository name, branch name, and parameter values according to your project's requirements.
+```
+
+* Note: Make sure to adjust the repository name, branch name, and parameter values according to your project's requirements.
