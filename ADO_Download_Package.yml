@@ -1,0 +1,46 @@
+parameters:
+- name: 'packageType'
+  type: string
+  default: 'nuget'
+
+- name: 'feed'
+  type: string
+
+- name: 'view'
+  type: string
+  default: 'Local'
+
+- name: 'definition'
+  type: string
+  default: '.'
+
+- name: 'version'
+  type: string
+  default: '$(Build.BuildId)'
+
+- name: 'downloadPath'
+  type: string
+  default: '$(System.ArtifactsDirectory)'
+
+- name: 'files'
+  type: string
+  default: "**"
+
+- name: 'extract'
+  type: boolean
+  default: true
+
+steps:
+
+- task: DownloadPackage@1
+  inputs:
+    packageType: ${{parameters.packageType}}
+    feed: '${{parameters.feed}}'
+    view: '${{parameters.view}}'
+    definition: '${{parameters.definition}}'
+    version: '${{parameters.version}}'
+    downloadPath: '${{parameters.downloadPath}}'
+    files: '${{parameters.files}}'
+    extract: '${{parameters.extract}}'
+  name: DownloadPackage
+  displayName: "Download Package Task"
