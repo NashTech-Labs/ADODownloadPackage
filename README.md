@@ -1,4 +1,4 @@
-#  ADO_Download_Package_Task.ado
+# ADO_Download_Package_Task.ado
 
 Use this Azure template to download a package from a package management feed in Azure Artifacts.
 
@@ -30,7 +30,7 @@ You can directly call a particular template as per the requirement. for example:
   repositories:
     - repository: Template
       type: github
-      name: your_username/Azure_Container_Build_Task.ado
+      name: your_username/ADO_Download_Package.ado
       ref: <respective branch name>
       endpoint: 'githubServiceConnectioNname'
 
